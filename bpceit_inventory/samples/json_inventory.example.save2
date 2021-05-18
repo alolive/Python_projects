@@ -1,0 +1,103 @@
+{
+    "_meta": {
+        "hostvars": {
+            "bflgtct011.dom101.mapres": {
+                "ansible_host": "114.121.239.216",
+                "site" : "Antares",
+                "salle" : "Sirius"
+            },
+            "bflgsra011.dom101.mapres": {
+                "ansible_host": "114.121.228.132",
+                "site" : "Antares",
+                "salle" : "Sirius"
+            },
+            "melmmqs008.dom101.mapres": {
+                "ansible_host": "114.121.214.50",
+                "site" : "Antares",
+                "salle" : "Vega"
+            },
+            "bilmwsg019.dom101.mapres": {
+                "ansible_host": "114.123.238.192",
+                "site" : "Albireo",
+                "salle" : "Topaze"
+            },
+            "bilmans002.dom101.mapres": {
+                "ansible_host": "114.123.230.62",
+                "site" : "Albireo",
+                "salle" : "Topaze"
+            }, 
+            "biltaei004.dom101.mapres": {
+                "ansible_host": "114.223.200.31",
+                "site" : "Albireo",
+                "salle" : "Saphir"
+            }
+        },
+        "vars": {
+            "ansible_connection": "ssh",
+            "tres": "three"
+        }
+    },
+    "all": {
+        "children": [
+            "ungrouped"
+        ],
+        "hosts": [],
+        "vars": {
+             "ansible_connection": "ssh"
+        }
+    },
+#    "local": {
+#        "children": [],
+#        "hosts": [
+#            "bflgtct011.dom101.mapres",
+#            "bflgsra011.dom101.mapres",
+#            "melmmqs008.dom101.mapres",
+#            "bilmwsg019.dom101.mapres",
+#            "bilmans002.dom101.mapres",
+#            "biltaei004.dom101.mapres"
+#        ],
+#        "vars": {
+#            "ansible_connection": "ssh",
+#            "tres": "three"
+#        }
+#    },
+    "Albireo": {
+        "children": [],
+        "hosts": [
+            "bflgtct011.dom101.mapres",
+            "bflgsra011.dom101.mapres",
+            "melmmqs008.dom101.mapres"
+        ],
+        "vars": {
+            "site" : "Albireo",
+            "tres": "three"
+        }
+    },
+    "Antares": {
+        "children": [],
+        "hosts": [
+            "bilmwsg019.dom101.mapres",
+            "bilmans002.dom101.mapres",
+            "biltaei004.dom101.mapres"       
+        ],
+        "vars": {
+            "site" : "Antares",
+            "tres": "three"
+        }
+    },
+    "Production": {
+        "children": [],
+        "hosts": [
+            "bilmwsg019.dom101.mapres"
+        ],
+        "vars": {
+            "environment" : "production",
+            "tres": "three"
+        }
+    },
+    "ungrouped": {
+         "children": [],
+         "hosts": [],
+         "vars": {}
+    } 
+}
